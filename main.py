@@ -5,7 +5,7 @@ with open("path.txt") as file: #Remember to update path from path.txt!!!
     FOLDER_PATH = file.read()
     filenamelist = os.listdir(FOLDER_PATH)
 
-subjects=["mat","cin","eng","kim","ink"]
+subjects=["mat","cin","eng","kim","ink"] #Add subject names here
 
 for i in subjects:
   pattern = i
