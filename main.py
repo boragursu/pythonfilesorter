@@ -1,7 +1,7 @@
 import os
 import re
 import shutil
-with open("path.txt") as file: #Remember to update path from path.txt
+with open("path.txt") as file: #Remember to update path from path.txt!!!
     FOLDER_PATH = file.read()
     filenamelist = os.listdir(FOLDER_PATH)
 
