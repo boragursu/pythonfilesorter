@@ -13,22 +13,22 @@ if subjectinput not in subjects.keys():
 else:
   subjects[subjectinput].append(patterninput)
 
-for x in subjects:
-   for i in subjects[x]:
+for j in subjects:
+   for i in subjects[j]:
       pattern=i
       for filename in filenamelist:
           x = re.search(pattern, str(filename))
           if x:
-              if os.path.exists(FOLDER_PATH+"/"+subjectinput) == False:
+              if os.path.exists(FOLDER_PATH+"/"+j) == False:
                 try:
-                  os.mkdir(FOLDER_PATH+"/"+subjectinput)
+                  os.mkdir(FOLDER_PATH+"/"+j)
                 except OSError:
                   print ("Creation of the directory %s failed" % FOLDER_PATH)
                 else:
                   print ("Successfully created the directory %s " % FOLDER_PATH)
-                shutil.move(FOLDER_PATH+"/"+filename,FOLDER_PATH+"/"+subjectinput+"/"+filename)
+                shutil.move(FOLDER_PATH+"/"+filename,FOLDER_PATH+"/"+j+"/"+filename)
               else:
-                shutil.move(FOLDER_PATH+"/"+filename,FOLDER_PATH+"/"+subjectinput)
+                shutil.move(FOLDER_PATH+"/"+filename,FOLDER_PATH+"/"+j)
                 print("Sucesfully moved to existing subject folder")
           else:
-              pass
+              pass 
